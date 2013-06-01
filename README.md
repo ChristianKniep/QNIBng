@@ -9,4 +9,4 @@ counting, timeing, etc.
 
 Install
 -------
-For installation and configuration please visit the github wiki: [QNIBng](/ChristianKniep/QNIBng/wiki)
+For installation and configuration please visit the github wiki: [QNIBng](http://github.com/ChristianKniep/QNIBng/wiki)
