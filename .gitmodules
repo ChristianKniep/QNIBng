@@ -1,0 +1,9 @@
+[submodule "modules/ceres"]
+	path = modules/ceres
+	url = https://github.com/graphite-project/ceres.git
+[submodule "modules/carbon"]
+	path = modules/carbon
+	url = https://github.com/graphite-project/carbon.git
+[submodule "modules/graphite-web"]
+	path = modules/graphite-web
+	url = https://github.com/graphite-project/graphite-web.git
