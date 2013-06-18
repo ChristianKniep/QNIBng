@@ -7,3 +7,6 @@
 [submodule "modules/graphite-web"]
 	path = modules/graphite-web
 	url = https://github.com/graphite-project/graphite-web.git
+[submodule "modules/opensm-qnibng"]
+	path = modules/opensm-qnibng
+	url = https://github.com/ChristianKniep/opensm-qnibng.git
