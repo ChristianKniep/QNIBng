@@ -4,7 +4,6 @@ class qnib-devel {
         ensure => "installed"
     }
     package { 'fpm':
-        #require  => Package["ruby-devel"],
         require  => Package[$pkgToInstall],
         ensure   => 'installed',
         provider => 'gem',

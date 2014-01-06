@@ -13,6 +13,7 @@ class statsd {
         enable => true,
         require => Package['qnib-statsd'],
     }
+    
     file { "/etc/statsd/config.js":
         notify  => Service['statsd'],
         owner   => root,

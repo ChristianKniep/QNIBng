@@ -1,40 +1,43 @@
+class qnib_carbon inherits carbon {
+    File["/etc/carbon/storage-schemas.conf"] {
+        source  => "puppet:///modules/qnib/etc/carbon/storage-schemas.conf",
+    }
+}
+
 class qnib {
+    
     include graphite-web
-    include carbon
     include ibsim
     include statsd
+    include qnib-opensm    
+    include qnib_carbon
     
     package { ["screen"]:
         ensure => "installed",
     }
     
-    user { 'qnib':
-        ensure => present,
-        managehome => true,
+    file { "/usr/local/sbin/ibsim_activate":
+        owner   => root,
+        group   => root,
+        mode    => 755,
+        source  => "puppet:///modules/qnib/usr/local/sbin/ibsim_activate",
     }
     
-    file { "/home/qnib/.bashrc":
-        owner   => qnib,
-        group   => qnib,
-        mode    => 600,
-        source  => "puppet:///modules/qnib/home/qnib/bashrc",
-        require => User['qnib'],
-    }
-    
-    file { "/home/qnib/cluster_topo/":
+    file { "/root/cluster_topo/":
         ensure => directory,
         recurse => true,
-        owner   => qnib,
-        group   => qnib,
+        owner   => root,
+        group   => root,
         mode    => 755,
-        require => User['qnib'],
     }
     
-    file { "/home/qnib/cluster_topo/4nodes.nlst":
-        owner   => qnib,
-        group   => qnib,
+    file { "/root/cluster_topo/4nodes.nlst":
+        owner   => root,
+        group   => root,
         mode    => 644,
-        source  => "puppet:///modules/qnib/home/qnib/cluster_topo/4nodes.nlst",
-        require => User['qnib'],
+        source  => "puppet:///modules/qnib/cluster_topo/4nodes.nlst",
+        require => File['/root/cluster_topo'],
     }
+    
+    
 }
