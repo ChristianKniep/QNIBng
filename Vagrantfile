@@ -40,7 +40,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.synced_folder "/Users/kniepbert/Daten/git/QNIBng", "/qnib"
-  config.vm.synced_folder "/Volumes/SSData/repo", "/repo"
+  config.vm.synced_folder "/Volumes/SSData/repo/fedora", "/repo/fedora"
+  config.vm.synced_folder "/Volumes/SSData/repo/qnib", "/repo/qnib"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
