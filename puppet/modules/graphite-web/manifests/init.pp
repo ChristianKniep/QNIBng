@@ -67,6 +67,7 @@ class graphite-web {
     exec { "disable_selinux":
         command => "/sbin/setenforce 0",
         notify  => Service['httpd'],
+        unless => "/usr/bin/grep -c SELINUX=disabled /etc/selinux/config",
     }
     
 }
