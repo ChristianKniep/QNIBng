@@ -38,10 +38,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "/Users/kniepbert/Daten/git/QNIBng", "/qnib"
-  config.vm.synced_folder "/Volumes/SSData/repo/fedora", "/repo/fedora"
-  config.vm.synced_folder "/Volumes/SSData/repo/qnib", "/repo/qnib"
+  config.vm.synced_folder "./repo/qnib", "/repo/qnib"
+  #config.vm.synced_folder "/Volumes/SSData/repo/fedora", "/repo/fedora"
+  config.vm.synced_folder "./repo/fedora", "/repo/fedora"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -86,7 +85,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.module_path = "puppet/modules"
-    puppet.working_directory = '/vagrant/data'
     puppet.manifest_file = "init.pp"
   end
 

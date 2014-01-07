@@ -1,2 +1,2 @@
 include qnib
-include qnib-devel
+#include qnib-devel

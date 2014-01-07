@@ -5,6 +5,10 @@ class qnib_carbon inherits carbon {
 }
 
 class qnib {
+
+    package { ["qnib-fd-repo", "qnib-repo"]:
+        ensure => "installed",
+    }
     
     include graphite-web
     include ibsim
