@@ -6,7 +6,7 @@ class qnib_carbon inherits carbon {
 
 class qnib {
 
-    package { ["qnib-fd-repo", "qnib-repo"]:
+    package { ["qnib-repo"]:
         ensure => "installed",
     }
     
