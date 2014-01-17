@@ -58,4 +58,5 @@ To fire up the test environment a Fedora19 box has
     Notice: Finished catalog run in 483.99 seconds
     QNIBng (master)$
     
-.. image:: misc/pics//graphite_start.png
+.. image:: misc/pics/graphite_start.png
+    :width: 350 px
