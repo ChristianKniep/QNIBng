@@ -19,6 +19,10 @@ Vagrant
 the process and keep it reproducable.
 
 
+Vagrant TestRun
+================
+
+To fire up the test environment a Fedora19 box has 
 
 .. code:: bash
 
@@ -52,4 +56,6 @@ the process and keep it reproducable.
     Notice: Compiled catalog for vagrant-fedora-19.vagrantup.com in environment production in 2.74 seconds
     *snip*
     Notice: Finished catalog run in 483.99 seconds
-    QNIBng (master)$ 
+    QNIBng (master)$
+    
+.. image:: misc/pics//graphite_start.png
