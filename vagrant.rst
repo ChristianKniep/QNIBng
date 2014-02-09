@@ -41,6 +41,9 @@ To fire up the test environment a Fedora19 box has
     [default] Forwarding ports...
     [default] -- 22 => 2222 (adapter 1)
     [default] -- 80 => 8088 (adapter 1)
+    [default] -- 2003 => 2003 (adapter 1)
+    [default] -- 2004 => 2004 (adapter 1)
+    [default] -- 8125 => 8125 (adapter 1)
     [default] Running 'pre-boot' VM customizations...
     [default] Booting VM...
     [default] Waiting for machine to boot. This may take a few minutes...
@@ -58,5 +61,8 @@ To fire up the test environment a Fedora19 box has
     Notice: Finished catalog run in 483.99 seconds
     QNIBng (master)$
     
-.. image:: misc/pics/graphite_start.png
-    :width: 350 px
+After the box is up and running, the graphite-webapp is available by pointing a browser to `localhost:8088 <http://localhost:8088>`_.
+
+.. image:: ./misc/pics/graphite_start.png
+   :scale: 30
+    
