@@ -12,6 +12,7 @@ class qnib {
     
     include graphite-web
     include ibsim
+    include logstash
     include statsd
     include qnib-opensm    
     include qnib_carbon
