@@ -23,6 +23,30 @@ class logstash {
         require => Package['logstash'],
     }
     
+    file { "/var/run/logstash":
+        ensure => directory,
+        recurse => true,
+        owner   => root,
+        group   => root,
+        mode    => 755,
+    }
+    
+    file { "/etc/logstash/patterns":
+        ensure => directory,
+        recurse => true,
+        owner   => root,
+        group   => root,
+        mode    => 755,
+    }
+    
+    file { "/etc/logstash/patterns/qnib-patterns":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///modules/logstash/etc/logstash/patterns/qnib-patterns",
+        require => [Package['logstash'], File['/etc/logstash/patterns']]
+    }
+    
     file { "/etc/sysconfig/logstash":
         owner   => root,
         group   => root,

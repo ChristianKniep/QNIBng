@@ -44,5 +44,21 @@ class qnib {
         require => File['/root/cluster_topo'],
     }
     
+    file { "/root/cluster_topo/64nodes.nlst":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///modules/qnib/cluster_topo/64nodes.nlst",
+        require => File['/root/cluster_topo'],
+    }
+    
+    file { "/root/cluster_topo/256nodes.nlst":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///modules/qnib/cluster_topo/256nodes.nlst",
+        require => File['/root/cluster_topo'],
+    }
+    
     
 }

@@ -1,0 +1,6 @@
+OSM_TIMESTAMP \w+ \d+ \d+\:\d+\:\d+
+OSM_FLOAT \d+(\.\d+)?
+OSM_DEC \d+
+OSM_DEB_LEVEL 0x\d+
+OSM_PM_STATS PerfMgr total sweep time %{OSM_FLOAT:osm_sweep_time}s MAD\: fastest %{OSM_DEC:osm_mad_min}us, slowest %{OSM_DEC:osm_mad_max}us, avg %{OSM_FLOAT:osm_mad_avg}us
+OSM_PM_PRELOG %{OSM_TIMESTAMP} %{OSM_DEC} \[\w+\] %{OSM_DEB_LEVEL} ->
