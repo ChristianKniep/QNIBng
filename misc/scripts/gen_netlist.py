@@ -37,14 +37,13 @@ class MyGraph(object):
         """
         self.opt = opt
         self.sw_template = "sw%(sw_id)s"
-        self.node_template = 'node_%(sw_id)s_%(port_id)s'
+        self.node_template = 'node%(sw_id)s%(port_id)s'
         self.graph = nx.Graph()
 
     def add_switch(self, sw_id, ports=48):
         """ adds a switch to the graph
         """
         name = self.sw_template % {'sw_id': sw_id}
-        print "add switch '%s'" % name
         self.graph.add_node(name, ports=ports, type='switch')
 
     def add_node(self, node, ports=1, switch=None):
@@ -84,8 +83,10 @@ class MyGraph(object):
             node_template = self.node_template
         sw_name = sw_template % {'sw_id': sw_id}
         self.add_switch(sw_id, ports)
+        swid = str(sw_id).rjust(3,"0")
         for port_id in range(1, ports):
-            node_name = node_template % {'sw_id': sw_id, 'port_id': port_id}
+            portid = str(port_id).rjust(3,"0")
+            node_name = node_template % {'sw_id': swid, 'port_id': portid}
             self.add_node(node_name, switch=sw_name)
 
     def connect_switches(self, src_id, dest_id):
