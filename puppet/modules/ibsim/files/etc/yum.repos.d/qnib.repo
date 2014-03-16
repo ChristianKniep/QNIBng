@@ -1,0 +1,7 @@
+[qnib]
+name=QNIB repository for FD19
+failovermethod=priority
+baseurl=file:///repo/qnib/fedora/19/
+enabled=1
+metadata_expire=7d
+gpgcheck=0

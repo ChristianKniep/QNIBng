@@ -1,13 +1,9 @@
 class qnib-opensm {
     
-    exec { "yum_clean_all":
-        command => "/bin/yum clean all",
-    }
-    
     $pkgToInstall = [ "qnib-opensm" ]
     package { $pkgToInstall:
-        ensure => "installed",
-        before => Exec['yum_clean_all'],
+        ensure => "latest",
+        require => File['/etc/yum.repos.d/qnib.repo'],
     }
     
     file { "/usr/etc/opensm":
@@ -19,7 +15,6 @@ class qnib-opensm {
     }
     
     file { "/usr/etc/opensm/opensm.conf":
-        notify  => Service['httpd'],
         owner   => root,
         group   => root,
         mode    => 644,

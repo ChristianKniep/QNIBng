@@ -1,0 +1,10 @@
+[Unit]
+Description=Diamond is a python daemon that collects system metrics and publishes them.
+After=syslog.target network.target 
+
+[Service]
+ExecStart=/bin/diamond -f -l
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

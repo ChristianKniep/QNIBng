@@ -37,6 +37,7 @@ class logstash {
         owner   => root,
         group   => root,
         mode    => 755,
+        require => Package["logstash"],
     }
     
     file { "/etc/logstash/patterns/qnib-patterns":

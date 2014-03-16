@@ -1,11 +1,7 @@
 class statsd {
-    exec { "yum clean all":
-        command => "/bin/yum clean all"
-    }
     
     package { "qnib-statsd":
-        ensure => "installed",
-        require  => Exec['yum clean all'],
+        ensure => "latest",
     }
     
     service { "statsd":

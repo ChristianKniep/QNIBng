@@ -1,21 +1,19 @@
-class qnib_carbon inherits carbon {
-    File["/etc/carbon/storage-schemas.conf"] {
-        source  => "puppet:///modules/qnib/etc/carbon/storage-schemas.conf",
-    }
-}
-
 class qnib {
 
-    package { ["qnib-repo"]:
-        ensure => "installed",
-    }
     
     include graphite-web
     include ibsim
     include logstash
     include statsd
     include qnib-opensm    
-    include qnib_carbon
+    include carbon
+    
+    file { "/etc/yum.repos.d/qnib.repo":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///modules/qnib/etc/yum.repos.d/qnib.repo",
+    }
     
     package { ["screen"]:
         ensure => "installed",
